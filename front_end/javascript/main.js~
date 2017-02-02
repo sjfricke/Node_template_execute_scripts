@@ -1,0 +1,10 @@
+function sendInput() {
+
+    // get value from text input
+    var input = $(#nameInput).value;
+
+    // makes call to server
+    $.get('/script' + input, function(result) {
+	console.log(result);
+    });
+}

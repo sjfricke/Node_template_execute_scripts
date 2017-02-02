@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Awesome webpage</title>
+    </head>
+    <body>   
+	Enter name here:
+	<br>     
+	<input id="nameInput" type="text">
+	<button onclick="sendInput()"> Run Script!</button> 
+    </body>
+    <script src="library/jquery-3.1.1.min.js"></script>
+    <script src="javascript/main.js"></script>
+</html>
