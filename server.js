@@ -14,13 +14,15 @@ var argv = require('minimist')(process.argv.slice(2)); //used for easy param par
 //------------------------ Checks flags --------------------------------//
 
 if (argv.help) {
-    console.log("TODO: add help");
+    console.log("How to run\n\tnode server.js path/to/my/script/executable <options>\n");
+    console.log("Options:");
+    console.log("-p\n\tPass a port number otherwise default is 5000");
     process.exit(1);
 }
 
 // checks for a script
 if (!process.argv[2]) {
-    console.log("You need to pass the path to your script\n\ntry:\n\tnode server.js path/to/my/script\n");
+    console.log("You need to pass the path to your script\n\ntry:\n\tnode server.js path/to/my/script/executable\n");
     console.log("For more options type:\n\tnode server.js --help");
     process.exit(1);
 }
@@ -52,14 +54,14 @@ app.get('/script/:input', function(req, res) {
 
     // runs when script closes
     child.on("close", (code, signal) => {
-	console.log("closed");
-	console.log(code);
-	console.log(signal);
+	console.log("script closed");
+	console.log("return code: " + code);
+	console.log("Signal triggered: " + signal);
     })
 
     // runs if script throws an error
     child.on("error", (err) => {
-	console.log("err");
+	console.log("ERROR:");
 	console.error(err);
     })
 });
