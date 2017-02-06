@@ -20,6 +20,7 @@ To run this is **VERY** simple
 3. run `npm install`
   * this will load the libraries you need
 4. run `node server.js /path/to/my/script`
+  * **NOTE:** `/path/to/my/script` just means where ever on your computer the script you want to run is
   * other options and details about this line below
 5. Open URL it gives you in a browser and away you go!
 6. **Optional** I included a simple file to test
@@ -41,6 +42,11 @@ These are options to pass to
 
 If you want to run your program even when your terminal is not open you can use the [Forever npm tool](https://www.npmjs.com/package/forever)
 
-To run use `forever start --spinSleepTime 10000 server.js path/to/script`
+To install as a global program on your machine run `npm install forever -g` and now you can run `forever` in any directory
 
-**NOTE** You may have to run `npm install forever -g` which puts the forever program as a global program
+* To run use `forever start --spinSleepTime 10000 server.js path/to/script`
+  * `forever` is the program
+  * `start` is telling forever to run
+  * `--spinSleepTime 10000` 10 second wait between launches of a spinning script.
+  * `server.js` the node program script
+  * `path/to/script` what ever you made
